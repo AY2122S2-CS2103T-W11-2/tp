@@ -22,15 +22,14 @@ public class FindCommandParser implements Parser<FindCommand> {
      * @throws ParseException if the user input does not conform the expected format
      */
     public FindCommand parse(String args) throws ParseException {
-        String trimmedArgs = args.trim();
 
-        if (trimmedArgs.isEmpty()) {
+        if (args.trim().isEmpty()) {
             throw new ParseException(
                     String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindCommand.MESSAGE_USAGE));
         }
 
         ArgumentMultimap argMultimap =
-                ArgumentTokenizer.tokenize(trimmedArgs, PREFIX_NAME, PREFIX_PHONE, PREFIX_EMAIL,
+                ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_PHONE, PREFIX_EMAIL,
                         PREFIX_ADDRESS, PREFIX_APPLICATION);
 
         HashMap<Prefix, String> searchTerms = new HashMap<>();
@@ -55,9 +54,7 @@ public class FindCommandParser implements Parser<FindCommand> {
             searchTerms.put(PREFIX_ADDRESS, searchAddress);
         }
 
-
-        String[] nameKeywords = new String[5];
-        return new FindCommand(new NameContainsKeywordsPredicate(Arrays.asList(nameKeywords)));
+        return new FindCommand(new NameContainsKeywordsPredicate(searchTerms));
     }
 
 }
