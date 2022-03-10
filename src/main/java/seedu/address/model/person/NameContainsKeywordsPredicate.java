@@ -27,8 +27,6 @@ public class NameContainsKeywordsPredicate implements Predicate<Person> {
         if (keywords.containsKey(PREFIX_NAME)) {
             String[] nameFragments = keywords.get(PREFIX_NAME).split(" ");
 
-            System.out.println("AA");
-            System.out.println(Arrays.toString(nameFragments));
             boolean isContained = Stream.of(nameFragments)
                     .anyMatch(name -> StringUtil.containsWordIgnoreCase(person.getName().fullName, name));
 
@@ -45,10 +43,13 @@ public class NameContainsKeywordsPredicate implements Predicate<Person> {
             }
         }
 
+        if (keywords.containsKey(PREFIX_EMAIL)) {
+            Email searchEmail = new Email(keywords.get(PREFIX_EMAIL));
 
-
-
-
+            if (!person.getEmail().equals(searchEmail)) {
+                return false;
+            }
+        }
 
         return true;
     }
