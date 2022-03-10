@@ -1,23 +1,23 @@
 package seedu.address.model.person;
 
-import java.util.Arrays;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 import seedu.address.commons.util.StringUtil;
 import seedu.address.logic.parser.Prefix;
 
-import static seedu.address.logic.parser.CliSyntax.*;
-
 /**
  * Tests that a {@code Person}'s {@code Name} matches any of the keywords given.
  */
 public class NameContainsKeywordsPredicate implements Predicate<Person> {
-    private final HashMap<Prefix,String> keywords;
+    private final HashMap<Prefix, String> keywords;
 
-    public NameContainsKeywordsPredicate(HashMap<Prefix,String> keywords) {
+    public NameContainsKeywordsPredicate(HashMap<Prefix, String> keywords) {
         this.keywords = keywords;
     }
 

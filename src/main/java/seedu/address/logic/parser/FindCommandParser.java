@@ -1,15 +1,16 @@
 package seedu.address.logic.parser;
 
 import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.logic.parser.CliSyntax.*;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_APPLICATION;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 import seedu.address.logic.commands.FindCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
-import seedu.address.model.person.Phone;
 
 /**
  * Parses input arguments and creates a new FindCommand object
@@ -29,8 +30,7 @@ public class FindCommandParser implements Parser<FindCommand> {
         }
 
         ArgumentMultimap argMultimap =
-                ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_PHONE, PREFIX_EMAIL,
-                        PREFIX_ADDRESS, PREFIX_APPLICATION);
+                ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_PHONE, PREFIX_EMAIL, PREFIX_APPLICATION);
 
         HashMap<Prefix, String> searchTerms = new HashMap<>();
 
@@ -49,10 +49,7 @@ public class FindCommandParser implements Parser<FindCommand> {
             searchTerms.put(PREFIX_EMAIL, searchEmail);
         }
 
-        if (argMultimap.getValue(PREFIX_ADDRESS).isPresent()) {
-            String searchAddress = ParserUtil.parseAddress(argMultimap.getValue(PREFIX_ADDRESS).get()).toString();
-            searchTerms.put(PREFIX_ADDRESS, searchAddress);
-        }
+        // TODO find by application
 
         return new FindCommand(new NameContainsKeywordsPredicate(searchTerms));
     }
