@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 import seedu.address.commons.util.StringUtil;
 import seedu.address.logic.parser.Prefix;
 
-import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.*;
 
 /**
  * Tests that a {@code Person}'s {@code Name} matches any of the keywords given.
@@ -33,6 +33,14 @@ public class NameContainsKeywordsPredicate implements Predicate<Person> {
                     .anyMatch(name -> StringUtil.containsWordIgnoreCase(person.getName().fullName, name));
 
             if (!isContained) {
+                return false;
+            }
+        }
+
+        if (keywords.containsKey(PREFIX_PHONE)) {
+            Phone searchNumber = new Phone(keywords.get(PREFIX_PHONE));
+
+            if (!person.getPhone().equals(searchNumber)) {
                 return false;
             }
         }
