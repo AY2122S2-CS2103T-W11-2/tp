@@ -26,7 +26,7 @@ public class AddInterviewCommand extends AddCommand {
     public static final String MESSAGE_USAGE = COMMAND_WORD + " [i] : Adds a interview to the interview list. "
             + "by the index number used in the displayed person list. "
             + "Existing values will be overwritten by the input values.\n"
-            + "Parameters: INDEX (must be a positive integer) "
+            + "Parameters: INDEX (must be a positive integer) asd "
             + PREFIX_DATE + "DATE "
             + PREFIX_TIME + "TIME "
             + "Example: " + COMMAND_WORD + " 1 "
