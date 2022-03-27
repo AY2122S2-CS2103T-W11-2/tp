@@ -138,7 +138,7 @@ Deletes an existing job applicant/interview timing in the address book.
 * #### Deleting an interview 
   Format: `delete [i] INDEX`
 
-  Example: `delete [i] 1`
+  Example: `delete [i] 2`
 
 &nbsp;
 ### Finding a job applicant by keywords: `find` 
