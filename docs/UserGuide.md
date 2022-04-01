@@ -377,17 +377,23 @@ Relative filepath example for MacOS: `export  ./myDataFile.csv
 |---------------------:|:--------------------------------------------------------------------------------------------|
 |        Add Interview | `add [i] 1 d/DATE t/TIME`                                                                   |
 |    Add Job Applicant | `add [p] n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS j/JOB_POSITION s/STAGE`                    |
+|             Add Task | `add [t] h/HEADER d/DATE t/TIMES i/INFORMATION`                                             |
 |     Clear Interviews | `clear [i]`                                                                                 |
 | Clear Job Applicants | `clear [p]`                                                                                 |
+|          Clear Tasks | `clear [t]`                                                                                 |
 |     Delete Interview | `delete [i] INDEX`                                                                          |
 | Delete Job Applicant | `delete [p] INDEX`                                                                          |
+|          Delete Task | `delete [t] INDEX`                                                                          |
 |       Edit Interview | `edit [i] INDEX [d/DATE] [t/TIME]`                                                          |
 |   Edit Job Applicant | `edit [p] INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [j/JOB_POSITION] [s/STAGE]` |
+|   Edit Job Applicant | `edit [t] INDEX [h/HEADE] [d/DATE] [t/TIME] [i/INFORMATION]`                                |
 |                 Exit | `exit`                                                                                      |
 |       Find Interview | `find [i] g/KEYWORD [KEYWORDS...] [g/KEYWORD [KEYWORDS...]]...`                             |
 |   Find Job Applicant | `find [p] g/KEYWORD [KEYWORDS...] [g/KEYWORD [KEYWORDS...]]...`                             |
+|            Find Task | `find [p] g/KEYWORD [KEYWORDS...] [g/KEYWORD [KEYWORDS...]]...`                             |
 |                 Help | `help`                                                                                      |
-|               Import | `import FILEPATH`                                                                           |
-|               Export | `export FILEPATH`                                                                           |
 |      List Interviews | `list [i]`                                                                                  |
 |  List Job Applicants | `list [p]`                                                                                  |
+|           List Tasks | `list [t]`                                                                                  |
+|               Import | `import FILEPATH`                                                                           |
+|               Export | `export FILEPATH`                                                                           |
