@@ -48,29 +48,29 @@ public class TypicalPersons {
             .withJob("Data Scientist")
             .withStage("INPROGRESS").build();;
     public static final Person ELLE = new PersonBuilder().withName("Elle Meyer")
-            .withPhone("9482224")
+            .withPhone("94822242")
             .withEmail("werner@example.com")
             .withAddress("michegan ave")
             .withJob("Software Developer")
             .withStage("INPROGRESS").build();
     public static final Person FIONA = new PersonBuilder().withName("Fiona Kunz")
-            .withPhone("9482427")
+            .withPhone("94824273")
             .withEmail("lydia@example.com")
             .withAddress("little tokyo")
             .withJob("Mobile Engineer")
             .withStage("ACCEPTED").build();
     public static final Person GEORGE = new PersonBuilder().withName("George Best")
-            .withPhone("9482442")
+            .withPhone("94824423")
             .withEmail("anna@example.com")
             .withAddress("4th street")
             .withJob("Software Engineer")
             .withStage("REJECTED").build();
 
     // Manually added
-    public static final Person HOON = new PersonBuilder().withName("Hoon Meier").withPhone("8482424")
+    public static final Person HOON = new PersonBuilder().withName("Hoon Meier").withPhone("84824234")
             .withEmail("stefan@example.com").withAddress("little india").withJob("Software Engineer")
             .withStage("INPROGRESS").build();
-    public static final Person IDA = new PersonBuilder().withName("Ida Mueller").withPhone("8482131")
+    public static final Person IDA = new PersonBuilder().withName("Ida Mueller").withPhone("84821313")
             .withEmail("hans@example.com").withAddress("chicago ave").withJob("Data Analyst")
             .withStage("ACCEPTED").build();
 
