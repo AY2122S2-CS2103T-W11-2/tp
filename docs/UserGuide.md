@@ -163,7 +163,7 @@ Format: `clear [p]`
 * Clear command does not throw an error even if applicant list is already empty and success message will still be shown.
 
 &nbsp;
-### Finding job applicant(s) by keywords: `find [p]` 
+### Finding job applicant(s) by keywords: `find [p] g/` 
 Finds job applicants whose data contain the given keywords.
 
 Use `g/` flags to find job applicants whose data contain **all** the keywords.
@@ -279,12 +279,12 @@ Format: `clear [i]`
 * Clear command does not throw an error even if interview list is already empty and success message will still be shown.
 
 &nbsp;
-### Finding scheduled interview slot(s) by keywords: `find [i]`
+### Finding scheduled interview slot(s) by keywords: `find [i] g/`
 Finds interview slots with data containing any of the specified keywords.
 
 Use `g/` flags to find interview slot(s) with data containing **all** the keywords.
 
-:bulb: Hint: Use multiple `g/` flags to simulate an **OR** command (e.g. `find [i] g/n/alex g/j/software developer g/s/INPROGRESS`)
+:bulb: Hint: Use multiple `g/` flags to simulate an **OR** command (e.g. `find [i] g/n/alex g/j/data scientist g/t/13:05`)
 
 Format: `find [i] g/KEYWORD <KEYWORDS>... <g/KEYWORD <KEYWORDS>...>...`
 
@@ -386,7 +386,7 @@ Format: `clear [t]`
 * Clear command does not throw an error even if task list is already empty and success message will still be shown.
 
 &nbsp;
-### Finding task(s) by keywords: `find [t]`
+### Finding task(s) by keywords: `find [t] g/`
 Find tasks with data containing any of the specified keywords.
 
 Use `g/` flags to find task(s) with data containing **all** the keywords.

@@ -11,9 +11,9 @@ import seedu.address.model.interview.InterviewContainsKeywordsPredicate;
 public class FindInterviewCommand extends FindCommand {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
-            + " [i] : Finds all interviews that meet search criteria.\n"
+            + " [i] g/: Finds all interviews that meet search criteria.\n"
             + "Only accepts: g/, d/, t/, n/ and j/ flags\n"
-            + "Example: " + COMMAND_WORD + " [i] g/n/john j/software engineer g/d/2021-05-06";
+            + "Example: " + COMMAND_WORD + " [i] g/n/alex j/software engineer g/d/2021-05-06";
 
     private InterviewContainsKeywordsPredicate predicate;
 

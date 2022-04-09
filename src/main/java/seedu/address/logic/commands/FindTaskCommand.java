@@ -11,7 +11,7 @@ import seedu.address.model.tasks.TaskContainsKeywordPredicate;
 public class FindTaskCommand extends FindCommand {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
-            + " [t] : Finds all tasks that meet search criteria.\n"
+            + " [t] g/: Finds all tasks that meet search criteria.\n"
             + "Only accepts: g/, h/, d/, t/, and i/ flags\n"
             + "Example: " + COMMAND_WORD + " [t] g/h/Update applicant status d/2021-05-06 g/h/Add upcoming interviews";
 

@@ -34,7 +34,7 @@ public class TaskContainsKeywordPredicate implements Predicate<Task> {
                 containsAllGroupTerms = false;
             }
 
-            if (!infos.isEmpty() && !infos.stream().allMatch(t -> task.getInformation().contains(t))) {
+            if (!infos.isEmpty() && !infos.stream().allMatch(i -> task.getInformation().contains(i))) {
                 containsAllGroupTerms = false;
             }
 

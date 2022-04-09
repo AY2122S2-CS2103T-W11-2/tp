@@ -86,7 +86,11 @@ public class FindCommandParser implements Parser<FindCommand> {
         boolean stillHasGroupFlag = allGroups.stream()
                 .anyMatch(grp -> grp.strip().startsWith(String.valueOf(PREFIX_GROUP)));
 
-        if (isCompletelyEmpty || hasNoKeywords || hasNoSpaceBetweenInitialFlags || stillHasGroupFlag) {
+        if (hasNoKeywords) {
+            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, "No flags found in group"));
+        }
+
+        if (isCompletelyEmpty || hasNoSpaceBetweenInitialFlags || stillHasGroupFlag) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, msg));
         }
 
