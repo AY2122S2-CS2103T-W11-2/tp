@@ -37,21 +37,17 @@ public class FindCommandParserTest {
 
         // check for empty g/ flags
         assertParseFailure(person, " [p] g/",
-                String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindPersonCommand.MESSAGE_USAGE));
-        assertParseFailure(interview, " [i] g/",
-                String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindInterviewCommand.MESSAGE_USAGE));
-        assertParseFailure(person, " [p] g/n/test g/",
-                String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindPersonCommand.MESSAGE_USAGE));
+                String.format(MESSAGE_INVALID_COMMAND_FORMAT, "No flags found in group\n"
+                        + FindPersonCommand.MESSAGE_USAGE));
         assertParseFailure(interview, " [i] g/n/test g/",
-                String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindInterviewCommand.MESSAGE_USAGE));
-        assertParseFailure(person, " [p] g/n/test g/ g/j/software",
-                String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindPersonCommand.MESSAGE_USAGE));
+                String.format(MESSAGE_INVALID_COMMAND_FORMAT, "No flags found in group\n"
+                        + FindInterviewCommand.MESSAGE_USAGE));
         assertParseFailure(interview, " [i] g/n/test g/ g/j/software",
-                String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindInterviewCommand.MESSAGE_USAGE));
-        assertParseFailure(person, " [p] g/g/",
-                String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindPersonCommand.MESSAGE_USAGE));
-        assertParseFailure(interview, " [i] g/g/",
-                String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindInterviewCommand.MESSAGE_USAGE));
+                String.format(MESSAGE_INVALID_COMMAND_FORMAT, "No flags found in group\n"
+                        + FindInterviewCommand.MESSAGE_USAGE));
+        assertParseFailure(interview, " [p] g/g/",
+                String.format(MESSAGE_INVALID_COMMAND_FORMAT, "Additional g/ flag found\n"
+                        + FindPersonCommand.MESSAGE_USAGE));
     }
 
     @Test

@@ -87,10 +87,14 @@ public class FindCommandParser implements Parser<FindCommand> {
                 .anyMatch(grp -> grp.strip().startsWith(String.valueOf(PREFIX_GROUP)));
 
         if (hasNoKeywords) {
-            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, "No flags found in group"));
+            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, "No flags found in group\n" + msg));
         }
 
-        if (isCompletelyEmpty || hasNoSpaceBetweenInitialFlags || stillHasGroupFlag) {
+        if (stillHasGroupFlag) {
+            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, "Additional g/ flag found\n" + msg));
+        }
+
+        if (isCompletelyEmpty || hasNoSpaceBetweenInitialFlags) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, msg));
         }
 
@@ -101,7 +105,8 @@ public class FindCommandParser implements Parser<FindCommand> {
             if (!havePrefixesPresent(padding + firstArg, PREFIX_NAME, PREFIX_PHONE,
                     PREFIX_EMAIL, PREFIX_ADDRESS, PREFIX_JOB, PREFIX_STAGE, PREFIX_DATE, PREFIX_TIME,
                     PREFIX_GROUP, PREFIX_INFORMATION, PREFIX_HEADER)) {
-                throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, "No flags found in group"));
+                throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
+                        "No flags found in group\n" + msg));
             }
         }
     }
